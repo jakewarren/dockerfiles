@@ -1,0 +1,6 @@
+FROM golang:1.12.9
+
+RUN go get -v github.com/go-lintpack/lintpack/...
+RUN go get -v github.com/go-critic/go-critic/...
+RUN lintpack build -o bin/gocritic -linter.version='master' -linter.name='gocritic' github.com/go-critic/go-critic/checkers
+
