@@ -3,10 +3,8 @@
 
 FROM alpine:edge
 
-MAINTAINER André Dumas
-MAINTAINER Antón R. Yuste
 
-RUN apk --update add \
+RUN apk --no-cache --update add \
   ca-certificates \
   ruby \
   ruby-bundler \
@@ -16,7 +14,7 @@ RUN apk --update add \
 RUN apk add --no-cache make gcc libc-dev git libffi-dev && \
   rm -fr /usr/share/ri
 
-RUN gem install travis --no-rdoc --no-ri
+RUN gem install travis:1.8.10 --no-rdoc --no-ri
 
 # Location where travis config stored
 ENV TRAVIS_CONFIG_PATH /travis
