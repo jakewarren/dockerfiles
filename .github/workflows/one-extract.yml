@@ -19,7 +19,7 @@ jobs:
         run: |
           VERSION=${{ github.event.inputs.version }}
           IMAGE_NAME=one-extract
-          TAGS="gists/${IMAGE_NAME}:${VERSION},gists/${IMAGE_NAME}:latest"
+          TAGS="jakewarren/${IMAGE_NAME}:${VERSION},jakewarren/${IMAGE_NAME}:latest"
           echo ::set-output name=build_args::VERSION=${VERSION}
           echo ::set-output name=image-name::${IMAGE_NAME}
           echo ::set-output name=tags::${TAGS}
