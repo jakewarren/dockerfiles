@@ -20,9 +20,9 @@ jobs:
           VERSION=${{ github.event.inputs.version }}
           IMAGE_NAME=one-extract
           TAGS="jakewarren/${IMAGE_NAME}:${VERSION},jakewarren/${IMAGE_NAME}:latest"
-          echo ::set-output name=build_args::VERSION=${VERSION}
-          echo ::set-output name=image-name::${IMAGE_NAME}
-          echo ::set-output name=tags::${TAGS}
+          echo "build_args=VERSION=${VERSION}" >> $GITHUB_OUTPUT
+          echo "image-name=${IMAGE_NAME}" >> $GITHUB_OUTPUT
+          echo "tags=${TAGS}" >> $GITHUB_OUTPUT
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
