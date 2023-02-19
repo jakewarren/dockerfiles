@@ -2,6 +2,8 @@
 
 A Dockerized version of [csirtgadgets/csirtg-mail-py](https://github.com/csirtgadgets/csirtg-mail-py). 
 
+This tool parses .eml files and produces JSON output of the analysis. 
+
 ## Usage
 Analyze an email:
 ```
