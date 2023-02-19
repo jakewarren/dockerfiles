@@ -1,3 +1,5 @@
-FROM python:3.7.3-slim-stretch
-RUN pip install csirtg-mail
+FROM python:3.10-slim-bullseye
+
+RUN pip install csirtg_mail
+
 ENTRYPOINT ["csirtg-mail"]
