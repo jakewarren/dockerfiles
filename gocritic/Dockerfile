@@ -1,6 +1,6 @@
-FROM golang:1.13
+FROM golang:1.19
 
-RUN go get -v github.com/go-lintpack/lintpack/...
-RUN go get -v github.com/go-critic/go-critic/...
-RUN lintpack build -o bin/gocritic -linter.version='master' -linter.name='gocritic' github.com/go-critic/go-critic/checkers
+RUN go install -v github.com/go-critic/go-critic/cmd/gocritic@latest
+
+ENTRYPOINT [ "gocritic" ]
 
