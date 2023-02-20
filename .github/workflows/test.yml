@@ -1,0 +1,16 @@
+name: Test images
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 6 1 */1 *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run the bats test suite
+        run: npx bats --verbose-run tests/docker-image.bats
