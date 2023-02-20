@@ -19,7 +19,7 @@ jobs:
       - name: Prepare
         id: prepare
         run: |
-          VERSION=${{ github.event.inputs.version }}
+          VERSION=${{ github.event.inputs.version || "latest" }}
           IMAGE_NAME=dssuite
           TAGS="jakewarren/${IMAGE_NAME}:${VERSION},jakewarren/${IMAGE_NAME}:latest"
           echo "build_args=VERSION=${VERSION}" >> $GITHUB_OUTPUT
