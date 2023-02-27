@@ -8,7 +8,7 @@ on:
         required: true
         default: "latest"
   schedule:
-    - cron: "30 5 * * */1"
+    - cron: "30 5 * * 1"
 
 jobs:
   build:
