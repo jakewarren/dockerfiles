@@ -35,3 +35,7 @@ bats_require_minimum_version 1.5.0
   [[ "$output" =~ "usage: spoofy.py" ]]  
 }
 
+@test "Test that pysigma-sentinelone is installed" {
+  run -0 docker run --rm pysigma-sentinelone sigma --help
+  [[ "$output" =~ "Usage: sigma" ]]  
+}
