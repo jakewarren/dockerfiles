@@ -36,6 +36,6 @@ bats_require_minimum_version 1.5.0
 }
 
 @test "Test that pysigma-sentinelone is installed" {
-  run -0 docker run --rm pysigma-sentinelone sigma --help
+  run -0 docker run --rm jakewarren/pysigma-sentinelone sigma --help
   [[ "$output" =~ "Usage: sigma" ]]  
 }
