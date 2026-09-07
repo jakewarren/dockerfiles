@@ -1,4 +1,4 @@
-FROM python:3.7.3-slim-stretch
+FROM python:3.14-slim-trixie
 RUN apt-get --quiet --yes update &&\
     apt-get install git --yes --quiet --no-install-recommends &&\
     git clone https://github.com/salesforce/jarm.git &&\

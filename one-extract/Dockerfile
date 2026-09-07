@@ -1,8 +1,5 @@
-FROM python:3.7.3-slim-stretch
-RUN apt update &&\
-    apt install git -y &&\
-    git clone https://github.com/volexity/threat-intel.git && \
-    cd threat-intel/tools/one-extract/ && python -m pip install .
-    
+FROM python:3.14-slim-trixie
+
+RUN pip install one-extract
 
 ENTRYPOINT ["one-extract"]
